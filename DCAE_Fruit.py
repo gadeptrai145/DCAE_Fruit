@@ -13,6 +13,7 @@ EPOCHS = 30
 BATCH_SIZE = 32
 SEED = 42
 EXCEL_LOG_PATH = "training_performance_logs.xlsx"
+PATH_DATA = r"Fruit_data\Good Quality_Fruits" 
 
 #CALLBACK
 callbacks = [
@@ -84,7 +85,7 @@ def preprocess_for_autoencoder(images):
 
 #MAIN
 if __name__ == "__main__":
-    dataset_good_path = r"Fruit_data\Good Quality_Fruits" 
+    dataset_good_path = PATH_DATA
     
     if not os.path.exists(dataset_good_path):
         print(f"[LỖI] Không tìm thấy thư mục dữ liệu tại: {dataset_good_path}")
