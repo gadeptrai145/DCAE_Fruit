@@ -192,8 +192,9 @@ if __name__ == "__main__":
             mse.numpy()
         )
         
-    calculated_threshold = float(np.percentile(all_mses, 95))
-    
+    #calculated_threshold = float(np.percentile(all_mses, 95))
+    calculated_threshold = np.mean(all_mses) + 2*np.std(all_mses)
+        
     #XUẤT CẤU HÌNH VÀ MÔ HÌNH
     runtime_config = {
         "img_size": IMG_SIZE,
