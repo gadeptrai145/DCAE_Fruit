@@ -166,6 +166,10 @@ if __name__ == "__main__":
         batch_size=BATCH_SIZE,
         label_mode=None
     )
+
+    clean_images_ds = clean_images_ds.map(
+        lambda x: tf.cast(x, tf.float32)/255.0
+    )
     all_mses = []
     
     #QUÉT TỪNG BATCH CỦA TẬP DỮ LIỆU ĐỂ TÍNH MSE (TRÁNH TẢI TOÀN BỘ MẢNG LÊN RAM)
